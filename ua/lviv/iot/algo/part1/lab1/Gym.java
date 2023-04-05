@@ -2,12 +2,11 @@ package ua.lviv.iot.algo.part1.lab1;
 
 import lombok.*;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
 @ToString(callSuper = true)
-public class Gym extends SportComplex{
+public class Gym extends AbstractStadium{
     private int numberOfShowerRooms;
     private double square;
     private boolean volleyball;
@@ -15,8 +14,9 @@ public class Gym extends SportComplex{
     private boolean handball;
     private boolean karate;
 
-    public Gym(String name, int capacity, int currentAttendance, int numberOfShowerRooms, double square, boolean volleyball, boolean basketball, boolean handball, boolean karate) {
-        super(name, capacity, currentAttendance);
+    public Gym (String name, int capacity, int currentAttendance, int numberOfShowerRooms,
+               double square, boolean volleyball, boolean basketball, boolean handball, boolean karate) {
+        super (name, capacity, currentAttendance);
         this.numberOfShowerRooms = numberOfShowerRooms;
         this.square = square;
         this.volleyball = volleyball;
@@ -24,6 +24,7 @@ public class Gym extends SportComplex{
         this.handball = handball;
         this.karate = karate;
     }
+
     @Override
     public void getSupportedSports() { System.out.println("What types of sports can be played at this sports complex:");
         if (volleyball == true)

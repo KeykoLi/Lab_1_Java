@@ -2,12 +2,11 @@ package ua.lviv.iot.algo.part1.lab1;
 
 import lombok.*;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
 @ToString(callSuper = true)
-public class Stadium extends SportComplex {
+public class Stadium extends AbstractStadium {
     private String homeTeam;
     private String awayTeam;
     private boolean bicycleTrack;
@@ -15,21 +14,22 @@ public class Stadium extends SportComplex {
     private boolean football;
     private boolean athletics;
 
-    public Stadium(String name, int capacity, int currentAttendance, String homeTeam, String awayTeam, boolean bicycleTrack, boolean skatingSport, boolean football, boolean athletics) {
-    super(name, capacity, currentAttendance);
-        this.homeTeam=homeTeam;
-        this.awayTeam=awayTeam;
-    this.bicycleTrack=bicycleTrack;
-    this.skatingSport=skatingSport;
-    this.football=football;
-    this.athletics=athletics;
+    public Stadium(String name, int capacity, int currentAttendance, String homeTeam, String awayTeam,
+                   boolean bicycleTrack, boolean skatingSport, boolean football, boolean athletics) {
+        super (name, capacity, currentAttendance);
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
+        this.bicycleTrack = bicycleTrack;
+        this.skatingSport = skatingSport;
+        this.football = football;
+        this.athletics = athletics;
     }
 
-    public void changeHomeTeam(String teamName) {
+    public void changeHomeTeam (String teamName) {
         homeTeam = teamName;
     }
 
-    public void changeAwayTeam(String teamName) {
+    public void changeAwayTeam (String teamName) {
         awayTeam = teamName;
     }
 
@@ -46,16 +46,5 @@ public class Stadium extends SportComplex {
             System.out.println("Bicycle races");
     }
 
-    public void addAttendies(int count) {
-        if (capacity >= currentAttendance + count) {
-            currentAttendance += count;
-        }
-    }
 
-    public void decreaseAttendance() {
-        final int DECREASE = 100;
-        if (currentAttendance > DECREASE) {
-            currentAttendance -= DECREASE;
-        }
-    }
 }
