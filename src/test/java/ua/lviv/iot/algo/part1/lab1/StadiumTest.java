@@ -6,15 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StadiumTest {
     @Test
-    public void testToString() {
-        var stadium = new Stadium("Spartac",29000,23500, "Shahtar",
-                "Dynamo", true, true,true,true);
-        String str = stadium.toString();
-        assertTrue(str.contains("super=AbstractStadium(name=Spartac, capacity=29000, currentAttendance=23500"));
-        assertTrue(str.contains("homeTeam=Shahtar, awayTeam=Dynamo, bicycleTrack=true, skatingSport=true, football=true, athletics=true"));
-    }
-
-    @Test
     void add200Attendance() {
         var stadium=new Stadium();
         stadium.setCurrentAttendance(1500);

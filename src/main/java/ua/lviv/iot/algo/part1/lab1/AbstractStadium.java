@@ -1,6 +1,10 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.Setter;
+import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import java.util.List;
 
 @Setter
@@ -13,5 +17,5 @@ public abstract class AbstractStadium {
     private int capacity;
     private int currentAttendance;
 
-    abstract public List<String> getSupportedSports();
+    public abstract List<String> getSupportedSports();
 }

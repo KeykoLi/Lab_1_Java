@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 @Getter
 @ToString(callSuper = true)
-public class SwimmingPool extends AbstractStadium {
+public final class SwimmingPool extends AbstractStadium {
    private int numberOfShowerRooms;
    private double volume;
    private int maxNumberOfParticipants;
@@ -20,10 +20,15 @@ public class SwimmingPool extends AbstractStadium {
    private boolean artisticSwimming;
    private boolean complexSwimming;
 
-    public SwimmingPool (String name, int capacity, int currentAttendance, int numberOfShowerRooms, double volume,
-                        int maxNumberOfParticipants, boolean springboardJumping, boolean artisticSwimming,
-                        boolean complexSwimming) {
-        super (name, capacity, currentAttendance);
+    public SwimmingPool(final String name, final int capacity,
+                        final int currentAttendance,
+                        final int numberOfShowerRooms,
+                        final double volume,
+                        final int maxNumberOfParticipants,
+                        final boolean springboardJumping,
+                        final boolean artisticSwimming,
+                        final boolean complexSwimming) {
+        super(name, capacity, currentAttendance);
         this.numberOfShowerRooms = numberOfShowerRooms;
         this.volume = volume;
         this.maxNumberOfParticipants = maxNumberOfParticipants;
@@ -35,12 +40,15 @@ public class SwimmingPool extends AbstractStadium {
     @Override
     public List<String> getSupportedSports() {
         List<String> supportedSports = new ArrayList<>();
-        if (springboardJumping == true)
+        if (springboardJumping) {
             supportedSports.add("Springboard jumping");
-        if (artisticSwimming == true)
+        }
+        if (artisticSwimming) {
             supportedSports.add("Artistic swimming");
-        if (complexSwimming == true)
+        }
+        if (complexSwimming) {
             supportedSports.add("Complex swimming");
+        }
         return supportedSports;
     }
 }

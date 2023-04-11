@@ -1,7 +1,9 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
-
+import lombok.Setter;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,17 +11,20 @@ import java.util.List;
 @Setter
 @Getter
 @ToString(callSuper = true)
-public class Gym extends AbstractStadium{
-    private int numberOfShowerRooms;
+public final class Gym extends AbstractStadium {
+    private  int numberOfShowerRooms;
     private double square;
     private boolean volleyball;
-    private boolean basketball;
+    private  boolean basketball;
     private boolean handball;
     private boolean karate;
 
-    public Gym (String name, int capacity, int currentAttendance, int numberOfShowerRooms,
-               double square, boolean volleyball, boolean basketball, boolean handball, boolean karate) {
-        super (name, capacity, currentAttendance);
+    public Gym(final String  name, final int capacity,
+               final int currentAttendance, final int numberOfShowerRooms,
+               final double square, final boolean volleyball,
+               final boolean basketball, final boolean handball,
+               final boolean karate) {
+        super(name, capacity, currentAttendance);
         this.numberOfShowerRooms = numberOfShowerRooms;
         this.square = square;
         this.volleyball = volleyball;
@@ -31,14 +36,18 @@ public class Gym extends AbstractStadium{
     @Override
     public List<String> getSupportedSports() {
         List<String> supportedSports = new ArrayList<>();
-        if (volleyball == true)
+        if (volleyball) {
             supportedSports.add("Volleyball");
-        if (basketball == true)
+        }
+        if (basketball) {
             supportedSports.add("Basketball");
-        if (handball == true)
+        }
+        if (handball) {
             supportedSports.add("Handball");
-        if (karate == true)
+        }
+        if (karate) {
             supportedSports.add("Karate");
+        }
         return supportedSports;
     }
 }
