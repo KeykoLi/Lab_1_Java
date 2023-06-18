@@ -1,0 +1,4 @@
+name, capacity, current attendance, home team, away team, bicycle track, skating sport, football, athletics
+A, 10, 2, S, D, true, true, true, true
+name, capacity, current attendance, number of shower rooms, volume, max number of participants, springboard of jumping, artistic swimming, complex swimming
+Al, 4, 3, 15, 3.0, 5, false, true, true
